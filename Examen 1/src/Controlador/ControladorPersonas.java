@@ -36,6 +36,10 @@ public class ControladorPersonas implements ActionListener {
         } catch (PersonaException ex) {
             Logger.getLogger(ControladorPersonas.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }else{
+        if(evento.getActionCommand().equalsIgnoreCase("Salir")){
+            System.exit(0);
+        }
     }   
   }
 
