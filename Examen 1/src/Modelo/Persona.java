@@ -12,9 +12,9 @@ package Modelo;
 public class Persona {
     private String estatus;
     private String identificacion;
-    private String procedencia;
+    private Object procedencia;
     
-    public Persona(String estatus, String identificacion, String procedencia){
+    public Persona(String estatus, String identificacion, Object procedencia){
         setEstatus(estatus);
         setIdentificacion(identificacion);
         setProcedencia(procedencia);
@@ -39,10 +39,10 @@ public class Persona {
 
 //------------------------------------------------------------------------------
     
-    public void setProcedencia(String procedencia){
+    public void setProcedencia(Object procedencia){
         this.procedencia = procedencia;
     }
-    public String getProcedencia(){
+    public Object getProcedencia(){
         return procedencia;
     }
     
