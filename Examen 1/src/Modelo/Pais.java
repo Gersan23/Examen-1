@@ -11,4 +11,20 @@ package Modelo;
  */
 public class Pais {
     
+    private String nombre;
+    
+    public Pais(String nombre){
+        setNombre(nombre);
+    }
+    
+//------------------------------------------------------------------------------
+    
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }    
+    public String getNombre(){
+        return nombre;
+    }
+    
+    
 }
