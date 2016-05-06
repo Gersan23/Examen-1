@@ -12,9 +12,11 @@ package Modelo;
 public class Pais {
     
     private String nombre;
+    private int posicion;
     
-    public Pais(String nombre){
+    public Pais(String nombre, int posicion){
         setNombre(nombre);
+        setPosicion(posicion);
     }
     
 //------------------------------------------------------------------------------
@@ -25,6 +27,14 @@ public class Pais {
     public String getNombre(){
         return nombre;
     }
+
+//------------------------------------------------------------------------------
     
+    public void setPosicion(int posicion){
+        this.posicion = posicion;
+    }
+    public int getPosicion(){
+        return posicion;
+    }
     
 }
