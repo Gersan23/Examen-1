@@ -4,19 +4,48 @@
  * and open the template in the editor.
  */
 package Vista;
+import Controlador.ControladorPersonas;
+import Controlador.ValidadorCedula;
+import Modelo.ArrayPersonas;
+import Modelo.PersonaException;
+import javax.swing.JLabel;
 
 /**
  *
  * @author Gersan
  */
 public class VentanaPersonas extends javax.swing.JFrame {
+    private ControladorPersonas cp;
+    private ValidadorCedula validate;
+
+    public VentanaPersonas(ArrayPersonas array) {
+        initComponents();
+        cp = new ControladorPersonas(this, array);
+        //this.guiBotones1.agregarEvento(cp);
+        validate = new ValidadorCedula();
+    }
+
+    //public int getCodigoPorFuente(Object object) {
+      //  return this.guiBotones1.getCodigoPorFuente(object);}
+        
+           public void limpiar() {
+        this.jTEstatus.setText("");
+        this.jTIdentificacion.setText("");
+        this.jTProcedencia.setText("");
+        this.jTResidencia.setText("");
+    }
+
+    public void setMensajes(String mensajes) {
+        this.Mensajes.setText(mensajes);
+    }
+
 
     /**
      * Creates new form VentanaPersonas
      */
-    public VentanaPersonas() {
-        initComponents();
-    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,7 +64,7 @@ public class VentanaPersonas extends javax.swing.JFrame {
         jTProcedencia = new javax.swing.JTextField();
         jLResidencia = new javax.swing.JLabel();
         jTResidencia = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        AGREGAR = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
 
@@ -55,7 +84,7 @@ public class VentanaPersonas extends javax.swing.JFrame {
 
         jLResidencia.setText("Residencia:");
 
-        jButton1.setText("Agregar");
+        AGREGAR.setText("Agregar");
 
         jButton2.setText("Salir");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -79,7 +108,7 @@ public class VentanaPersonas extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(68, 68, 68)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(AGREGAR, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(106, 106, 106)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,7 +152,7 @@ public class VentanaPersonas extends javax.swing.JFrame {
                 .addComponent(jRadioButton1)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AGREGAR, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
@@ -179,7 +208,7 @@ public class VentanaPersonas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton AGREGAR;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLEstatus;
     private javax.swing.JLabel jLIdentificacion;
@@ -192,3 +221,100 @@ public class VentanaPersonas extends javax.swing.JFrame {
     private javax.swing.JTextField jTResidencia;
     // End of variables declaration//GEN-END:variables
 }
+/*
+import Controlador.ControladorMantenimientoEstudiate;
+import Controlador.Validador;
+import Modelo.DBEstudiante;
+import Modelo.EstudianteException;
+import javax.swing.JLabel;
+
+
+/**
+ *
+ * @author Luisza
+ 
+public class ManipulaEstudiantes extends javax.swing.JFrame {
+
+    private ControladorMantenimientoEstudiate cme;
+    private Validador validate;
+
+    public ManipulaEstudiantes(DBEstudiante db) {
+        initComponents();
+        cme = new ControladorMantenimientoEstudiate(this, db);
+        this.guiBotones1.agregarEvento(cme);
+        validate = new Validador();
+    }
+
+    public int getCodigoPorFuente(Object object) {
+          return this.guiBotones1.getCodigoPorFuente(object);
+    }
+
+  
+
+
+public void setTexCarnet(String texCarnet) {
+        this.texCarnet.setText(texCarnet);
+    }
+
+    public void setTexCorreo(String texCorreo) {
+        this.texCorreo.setText(texCorreo);
+    }
+
+    public void setTexNombre(String texNombre) {
+        this.texNombre.setText(texNombre);
+    }
+
+    public String getTexCarnet() {
+        return this.texCarnet.getText();
+    }
+
+    public String getTexCorreo() {
+        return this.texCorreo.getText();
+    }
+
+    public String getTexNombre() {
+        return this.texNombre.getText();
+    }
+
+    public boolean verificar() throws EstudianteException {
+        boolean escarnet = verificarTexCarnet();
+                    
+        if ((this.texCarnet.getText().equals("") || this.texCorreo.getText().equals("")) || this.texCorreo.getText().equals("")) {
+        
+          return true;
+        } 
+            
+        return false;
+    }
+     public boolean verificarTexCarnet() throws EstudianteException {
+ 
+         boolean escarnet = validate.validarCarnet(this.texCarnet.getText());
+         if(!escarnet){
+             throw new EstudianteException("Formato inválido de carnet", 
+                     false);
+         }
+         
+         return !escarnet;
+    }
+     
+     public void setEditable(boolean re){
+         this.texCarnet.setEditable(re);
+     }
+     /**public void setText(String nombre, String carnet, String correo){
+      
+        texCarnet.setText(carnet);
+        texNombre.setText(nombre);
+        texCorreo.setText(correo);
+    }     
+
+    public void limpiar() {
+        this.texCarnet.setText("");
+        this.texNombre.setText("");
+        this.texCorreo.setText("");
+    }
+
+    public void setMensajes(String mensajes) {
+        this.Mensajes.setText(mensajes);
+    }
+
+*/

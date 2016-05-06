@@ -23,7 +23,7 @@ public class ArrayPersonas {
         this.arregloPersona = arregloPersona;
     }
 
-    public String agregarEstudiante(Persona persona) throws PersonaException {
+    public String agregarPersona(Persona persona) throws PersonaException {
 
         if (verificarPersona(persona.getIdentificacion())) 
             throw new PersonaException(
