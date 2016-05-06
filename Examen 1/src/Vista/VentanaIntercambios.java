@@ -7,14 +7,14 @@ package Vista;
 
 /**
  *
- * @author Erick
+ * @author Gersan
  */
-public class VentanaPrincipal extends javax.swing.JFrame {
+public class VentanaIntercambios extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaPrincipal
+     * Creates new form VentanaIntercambios
      */
-    public VentanaPrincipal() {
+    public VentanaIntercambios() {
         initComponents();
     }
 
@@ -27,43 +27,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jmArchivo = new javax.swing.JMenu();
-        jMSalir = new javax.swing.JMenuItem();
-        jMPersonas = new javax.swing.JMenu();
-        jMCrear = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jmArchivo.setText("Archivo");
-
-        jMSalir.setText("Salir");
-        jmArchivo.add(jMSalir);
-
-        jMenuBar1.add(jmArchivo);
-
-        jMPersonas.setText("Personas");
-
-        jMCrear.setText("Crear");
-        jMPersonas.add(jMCrear);
-
-        jMenuBar1.add(jMPersonas);
-
-        jMenu1.setText("Intercambios");
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
+        jLabel1.setText("Identificaciones:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(293, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 279, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jLabel1)
+                .addContainerGap(247, Short.MAX_VALUE))
         );
 
         pack();
@@ -86,30 +70,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaIntercambios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaIntercambios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaIntercambios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaIntercambios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaIntercambios().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem jMCrear;
-    private javax.swing.JMenu jMPersonas;
-    private javax.swing.JMenuItem jMSalir;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu jmArchivo;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -13,10 +13,12 @@ public class Pais {
     
     private String nombre;
     private int posicion;
+    private boolean zonaIndigena;
     
-    public Pais(String nombre, int posicion){
+    public Pais(String nombre, int posicion, boolean zonaIndigena){
         setNombre(nombre);
         setPosicion(posicion);
+        setZonaIndigena(zonaIndigena);
     }
     
 //------------------------------------------------------------------------------
@@ -36,5 +38,14 @@ public class Pais {
     public int getPosicion(){
         return posicion;
     }
-    
+ 
+//------------------------------------------------------------------------------
+
+    public void setZonaIndigena(boolean zonaIndigena){
+        this.zonaIndigena = zonaIndigena;
+    }
+    public boolean getZonaIndigena(){
+        return zonaIndigena;
+    }
+
 }
