@@ -14,8 +14,10 @@ public class Persona {
     private String identificacion;
     private Object procedencia;
     private Object residencia;
-    
+   
+
     public Persona(String estatus, String identificacion, Object procedencia, Object residencia){
+
         setEstatus(estatus);
         setIdentificacion(identificacion);
         setProcedencia(procedencia);
