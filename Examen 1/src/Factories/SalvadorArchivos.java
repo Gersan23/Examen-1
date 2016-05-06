@@ -14,7 +14,7 @@ import java.util.HashMap;
  */
 public interface SalvadorArchivos {
     
-    void guardarEstudiante(ArrayList<Persona> persona);
+    void guardarPersona(ArrayList<Persona> persona);
     ArrayList<Persona> obtenerPersona();
     
 }

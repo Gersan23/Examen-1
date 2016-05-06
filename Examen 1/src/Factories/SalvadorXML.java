@@ -46,5 +46,10 @@ public class SalvadorXML implements SalvadorArchivos{
     public ArrayList<Persona> obtenerPersona() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void guardarPersona(ArrayList<Persona> persona) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
     

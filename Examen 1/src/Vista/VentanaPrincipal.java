@@ -4,18 +4,23 @@
  * and open the template in the editor.
  */
 package Vista;
-
+import Controlador.ControladorVentanaPrincipal;
 /**
  *
  * @author Erick
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private ControladorVentanaPrincipal cVentanaPrincipal;
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+        this.cVentanaPrincipal= new ControladorVentanaPrincipal();
+        this.jMSalir.addActionListener(cVentanaPrincipal);
+        this.jMCrear.addActionListener(cVentanaPrincipal);
+        this.jMIntercambios.addActionListener(cVentanaPrincipal);
     }
 
     /**
@@ -30,9 +35,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jmArchivo = new javax.swing.JMenu();
         jMSalir = new javax.swing.JMenuItem();
+        jCXml = new javax.swing.JCheckBoxMenuItem();
         jMPersonas = new javax.swing.JMenu();
         jMCrear = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        jMProcesos = new javax.swing.JMenu();
+        jMIntercambios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,6 +47,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMSalir.setText("Salir");
         jmArchivo.add(jMSalir);
+
+        jCXml.setSelected(true);
+        jCXml.setText("XML");
+        jmArchivo.add(jCXml);
 
         jMenuBar1.add(jmArchivo);
 
@@ -50,8 +61,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMPersonas);
 
-        jMenu1.setText("Intercambios");
-        jMenuBar1.add(jMenu1);
+        jMProcesos.setText("Procesos");
+
+        jMIntercambios.setText("Intercambios");
+        jMProcesos.add(jMIntercambios);
+
+        jMenuBar1.add(jMProcesos);
 
         setJMenuBar(jMenuBar1);
 
@@ -105,10 +120,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBoxMenuItem jCXml;
     private javax.swing.JMenuItem jMCrear;
+    private javax.swing.JMenuItem jMIntercambios;
     private javax.swing.JMenu jMPersonas;
+    private javax.swing.JMenu jMProcesos;
     private javax.swing.JMenuItem jMSalir;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jmArchivo;
     // End of variables declaration//GEN-END:variables
