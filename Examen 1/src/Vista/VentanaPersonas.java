@@ -7,8 +7,10 @@ package Vista;
 import Controlador.ControladorPersonas;
 import Controlador.ValidadorCedula;
 import Modelo.ArrayPersonas;
+import Modelo.Persona;
 import Modelo.PersonaException;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,13 +19,21 @@ import javax.swing.JLabel;
 public class VentanaPersonas extends javax.swing.JFrame {
     private ControladorPersonas cp;
     private ValidadorCedula validate;
-
+    private Persona persona;
+    private ArrayPersonas array;
+    
     public VentanaPersonas(ArrayPersonas array) {
         initComponents();
         cp = new ControladorPersonas(this, array);
         //this.guiBotones1.agregarEvento(cp);
         validate = new ValidadorCedula();
     }
+
+    private VentanaPersonas() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
     //public int getCodigoPorFuente(Object object) {
       //  return this.guiBotones1.getCodigoPorFuente(object);}
@@ -34,11 +44,18 @@ public class VentanaPersonas extends javax.swing.JFrame {
         this.jTProcedencia.setText("");
         this.jTResidencia.setText("");
     }
-
-    public void setMensajes(String mensajes) {
-        this.Mensajes.setText(mensajes);
-    }
-
+           
+     public void agregar() throws PersonaException{
+         if(jTEstatus.getText() == null ||jTIdentificacion.getText() == null ||jTProcedencia.getText()== null || jTResidencia.getText()== null){
+             JOptionPane.showMessageDialog(null, "Verificar que ninguna casilla este vacía");
+         }
+         else{
+             persona = new Persona(jTEstatus.getText(),jTIdentificacion.getText(),jTProcedencia.getText(), jTResidencia.getText());
+             array.agregarPersona(persona);
+             JOptionPane.showMessageDialog(null, "Agregado correctamente");
+         }
+     }
+    
 
     /**
      * Creates new form VentanaPersonas

@@ -12,11 +12,11 @@ package Modelo;
 public class Persona {
     private String estatus;
     private String identificacion;
-    private Object procedencia;
-    private Object residencia;
+    private String procedencia;
+    private String residencia;
    
 
-    public Persona(String estatus, String identificacion, Object procedencia, Object residencia){
+    public Persona(String estatus, String identificacion, String procedencia, String residencia){
 
         setEstatus(estatus);
         setIdentificacion(identificacion);
@@ -43,7 +43,7 @@ public class Persona {
 
 //------------------------------------------------------------------------------
     
-    public void setProcedencia(Object procedencia){
+    public void setProcedencia(String procedencia){
         this.procedencia = procedencia;
     }
     public Object getProcedencia(){
@@ -52,7 +52,7 @@ public class Persona {
     
 //------------------------------------------------------------------------------
     
-    public void setResidencia(Object residencia){
+    public void setResidencia(String residencia){
         this.residencia = residencia;
     }
     public Object getActual(){
